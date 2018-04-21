@@ -1,0 +1,859 @@
+/*
+body{
+	background: #000000;
+}
+
+button{
+		box-shadow: 0 3px 0 0;
+}
+
+*/
+
+button:hover{
+    background-color: transparent;
+    color: white;
+    border: 3px solid white;
+
+}
+
+/*////////////////////////////////////
+				HEADER
+////////////////////////////////////*/
+
+html, body, .linha_header{
+    height: 100%;
+    width: 100%;
+    background-color: #000000;
+    margin: 0px;
+}
+
+.header{
+    background-image:url('./assets/imgs/bg_header.png');
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: top right;
+
+}
+
+.menu{
+    /*background-color: rgba(0,0,0,0.6);*/
+    background-color: transparent;
+    width: 100%;
+    top: 0;
+    text-align: center;
+    z-index: 100;
+}
+
+.menu li a::after {
+    content: '';
+    display: block;
+    background: white;
+    height: 2px;
+    width: 0;
+    transition: .3s;
+}
+
+.menu nav li a:hover::after, .menu nav li a.active::after {
+    width: 100%;
+}
+
+.menu ul li{
+    display: inline-block;
+    margin-left: 25px;
+    margin-top: 30px;
+}
+
+.menu ul li a{
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 14px;
+    line-height: 20px;
+    font-family: 'Gadugi';
+}
+
+.menu ul li a:hover{
+    color: #bbbbbb;
+    text-decoration: none;
+}
+
+.background_titulo{
+    margin-top:20%;
+}
+
+.titulo_header{
+    text-align: center;
+    color: white;
+}
+
+.titulo_header h1{
+    font-size: 77px;
+    font-family: 'Androgyne';
+    margin: 0;
+    line-height: 77px;
+}
+
+.titulo_header p{
+    margin: 0;
+    font-size: 18px;
+    line-height: 20px;
+    font-family: 'Gadugi';
+}
+
+.timer{
+    bottom: 40px;
+    position: absolute;
+    width: 100%;
+    font-family: 'Androgyne';
+    display: inherit;
+    color: white;
+}
+
+.dentro_timer{
+    margin: 0 auto;
+}
+
+.titulo_timer{
+    margin-right: 40px;
+}
+
+.timer h1{
+    font-size: 63px;
+    line-height: 33px;
+    margin: 0;
+}
+
+.timer h3{
+    font-size: 40px;
+    line-height: 30px;
+    margin: 0;
+}
+
+.hora_timer{
+    margin-top: 15px;
+}
+
+.quadrado_timer{
+    text-align: center;
+    font-size: 14px;
+    font-family: 'Gadugi';
+}
+
+.hora{
+    height: 60px;
+    background-color: rgba(255,255,255,0.1);
+    text-align: center;
+    font-size: 40px;
+    font-family: 'Gadugi';
+    font-weight: bold;
+    color: white;
+}
+
+.timer h2{
+    font-size: 40px;
+    font-family: 'Gadugi';
+    font-weight: bold;
+    margin: 25px 10px 0 10px;
+}
+
+.btn_timer{
+    margin: 15px 0 0 40px;
+    height: 75px;
+    border: 0px;
+    color: white;
+    background-color: #fc138c;
+    font-size: 40px;
+    font-family: 'Gadugi';
+    font-weight: bolder;
+    padding: 5px 30px;
+}
+
+.horas_dentro_timer{
+    width: auto;
+    margin: 0 auto;
+    display: inherit;
+}
+
+@media screen and (min-width: 500px) and (max-width: 1250px){
+
+    .background_titulo{
+        margin-top:150px;
+    }
+
+}
+
+@media screen and (max-width: 991px){
+
+    .titulo_header h1{
+        font-size: 50px;
+        line-height: 50px;
+    }
+
+    .titulo_header p{
+        font-size: 12px;
+    }
+
+    .titulo_timer{
+        width: 100%;
+        text-align: center;
+        display: inherit;
+    }
+
+    .timer h2{
+        font-size: 30px;
+        font-family: 'Gadugi';
+        font-weight: bold;
+        margin: 25px 2px 0 2px;
+    }
+    .titulo_timer h1, .titulo_timer h3{
+        font-size: 20px;
+        text-transform: capitalize;
+        margin-left: 5px;
+        text-align: center;
+    }
+
+    .titulo_timer h1{
+        line-height: 30px;
+    }
+
+    .btn_timer{
+        width: 100%;
+        margin: 0px;
+    }
+
+
+    .mobile-btn {
+        display: block;
+        color: white;
+        width: 36px;
+        height: 36px;
+        border-top: 4px solid;
+        margin: 25px;
+        float: right;
+        position: relative;
+        cursor: pointer;
+        -webkit-backface-visibility: hidden;
+        z-index: 10;
+    }
+
+    .mobile-btn::after, .mobile-btn::before {
+        content: '';
+        display: block;
+        height: 4px;
+        margin-top: 6px;
+        background: currentColor;
+        position: relative;
+        transition: transform .2s ease;
+    }
+
+    .mobile-btn.active {
+        border-top-color: transparent;
+    }
+
+    .mobile-btn.active::after {
+        margin-top: 0px;
+        top: 2px;
+        transform: rotate(45deg);
+    }
+
+    .mobile-btn.active::before {
+        margin-top: 0px;
+        top: 6px;
+        transform: rotate(135deg);
+    }
+
+    .menu-nav.mobile-menu {
+        position: fixed;
+        background-color: rgba(252,19,140,0.9);
+        /*background: #fc138c;*/
+        padding: 10px;
+        top: 0px;
+        right: 0px;
+        opacity: 0;
+        visibility: hidden;
+        transform: translate3d(60px, 0px, 0px);
+        transition: .3s;
+        z-index: 9;
+        padding-bottom: 50px;
+        width: 100%;
+        height: 100%;
+        padding: 50px 0;
+    }
+
+    .menu-nav.mobile-menu.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translate3d(0px, 0px, 0px);
+    }
+
+    .menu-nav.mobile-menu li {
+        display: block;
+        margin-top: 60px;
+    }
+
+    .menu-nav.mobile-menu li a {
+        width: 100%;
+        text-align: left;
+        font-size: 14px;
+        font-family: 'Androgyne';
+        text-align: left;
+    }
+
+    .produto_rodape{
+        padding: 0;
+    }
+
+    .sobre_text p{
+        text-align: center;
+    }
+
+    .loja{
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .sobre_img img{
+        padding: 20px;
+    }
+
+    .bg_formulario{
+        padding: 0;
+        background-color: transparent;
+    }
+
+
+}
+
+
+/*////////////////////////////////////
+				HEADER PERSONALIZADO
+////////////////////////////////////*/
+
+.header_personalizado{
+    background-color: rgba(0,0,0,0.9);
+    height: 80px;
+    width: 100%;
+}
+
+.header_personalizado span{
+    margin: 25px;
+    float: left;
+}
+
+.header_personalizado .logo{
+    display: block;
+    width: auto;
+}
+
+.logo{
+    float: left;
+    font-size: 77px;
+    font-family: 'Androgyne';
+    margin: 0;
+    line-height: 77px;
+    color: #ffffff;
+    padding-top: 15px;
+}
+
+.header_personalizado .menu{
+    text-align: left;
+    text-align: center;
+}
+/*
+.header_personalizado .menu li{
+	padding: 10px 15px;
+	background-color: #fc138c;
+	border-radius: 5px;
+}
+*/
+.header_personalizado .menu li a{
+    font-size: 14px;
+    font-family: 'Androgyne';
+}
+
+
+/*////////////////////////////////////
+				SOBRE
+////////////////////////////////////*/
+
+.sobre{
+    background-image:url('./assets/imgs/bg_sobre.png');
+    width: 100%;
+    height: auto;
+    padding-bottom: 50px;
+    background-size: cover;
+    background-position: center;
+}
+
+.cabecalho{
+    margin: 50px 0 50px 0;
+    display: inherit;
+}
+
+.cabecalho_barra{
+    background-color: #fc138c;
+    height: 3px;
+    margin-top: 20px;
+}
+
+.cabecalho h3{
+    text-align: center;
+    font-family: 'Androgyne';
+    color: #fc138c;
+}
+
+.sobre_img{
+    padding: 20px 0 0 0;
+    margin: 0px;
+}
+
+.sobre_img img{
+    margin: 0 auto;
+    width: 100%;
+
+}
+
+.sobre_text{
+    height: 400px;
+    padding: 100px 20px 0 20px;
+    font-size: 18px;
+    font-family: 'Gadugi';
+    color: #bbbbbb;
+    text-align: center;
+}
+
+.sobre_text p{
+    line-height: 30px;
+}
+
+
+.sobre_text p::first-letter {
+    font-size: 40px;
+}
+
+
+/*////////////////////////////////////
+				FOTOS
+////////////////////////////////////*/
+
+.fotos{
+    background-color: black;
+    width: 100%;
+    height: auto;
+    padding-bottom: 50px;
+    height: auto;
+
+}
+
+.exibir_foto{
+    height: 210px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid black;
+    padding: 0px;
+    margin: 0;
+    display: table-cell;
+}
+
+.exibir_foto img{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    padding: 0;
+    margin:0;
+    vertical-align: middle;
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+.exibir_foto:hover{
+    -ms-transform: scale(1); /* IE 9 */
+    -webkit-transform: scale(1); /* Safari 3-8 */
+    transform: scale(1);
+    z-index: 10;
+    border: 0;
+    cursor: pointer;
+    opacity: 1.0;
+}
+
+.btn_mais{
+    margin-top: 50px;
+    height: 60px;
+    border: 0px;
+    color: white;
+    background-color: #fc138c;
+    font-size: 30px;
+    font-family: 'Gadugi';
+    font-weight: bolder;
+}
+
+/*////////////////////////////////////
+				LOJA
+////////////////////////////////////*/
+
+
+.loja{
+    background-image:url('./assets/imgs/bg_loja.png');
+    width: 100%;
+    height: auto;
+    padding-bottom: 50PX;
+    background-size: cover;
+    background-position: center;
+}
+
+.row_produtos{
+    margin-bottom: 0px;
+}
+
+.produto{
+    height: 190px;
+    background-color: #292929;
+    padding: 0 0 0 0;
+    margin-bottom: 100px;
+}
+
+.produto_descricao{
+    padding: 20px 10px;
+    height: 120px;
+    margin: 0px;
+    width: 100%;
+}
+
+.produto_descricao h4{
+    text-align: center;
+    font-family: 'Androgyne';
+    color: #fc138c;
+    font-size: 20px;
+}
+
+.produto_descricao p{
+    text-align: center;
+    font-family: 'Gadugi';
+    color: white;
+    font-size: 12px;
+    margin-top: 30px;
+}
+
+.produto_rodape{
+    background-color: #151515;
+    width: 100%;
+    height: 70px;
+    margin: 0px;
+    padding: 10px 15px 15px 15px;
+
+}
+
+.produto_valor{
+    color: white;
+    font-size: 30px;
+    font-family: 'Franklingothicdemi';
+    font-weight: bolder;
+    float: left;
+    margin-left: 5px;
+}
+
+.produto_valor p{
+    font-size: 16px;
+    margin-top: 15px;
+    font-family: 'Franklingothicdemi';
+}
+
+.btn_produto{
+    margin: 0;
+    height: 50px;
+    border: 0px;
+    color: white;
+    background-color: #fc138c;
+    font-size: 20px;
+    font-family: 'Gadugi';
+    font-weight: bolder;
+    float: right;
+}
+
+/*////////////////////////////////////
+				CONTATO
+////////////////////////////////////*/
+
+
+.contato{
+    background-image:url('./assets/imgs/bg_contato.png');
+    width: 100%;
+    height: auto;
+    padding-bottom: 100px;
+    background-size: cover;
+    background-position: left top;
+}
+
+.form{
+    color: white;
+}
+
+.form_contato label{
+    color: #bbbbbb;
+    margin-bottom: 0px;
+    font-size: 20px;
+    font-family: 'Gadugi';
+}
+
+.form_contato input, .form_contato textarea{
+    border-radius: 0px;
+    border: 0px;
+    background-color: white;
+    opacity: 0.2;
+    color: white;
+}
+
+.btn_contato{
+    margin: 0;
+    height: 40px;
+    border: 0px;
+    color: white;
+    background-color: #fc138c;
+    font-size: 20px;
+    font-family: 'Gadugi';
+    font-weight: bolder;
+    float: right;
+}
+
+
+.social{
+    padding-top: 50px;
+}
+
+.social ul li {
+    display: block;
+}
+
+.social ul li img{
+    float: left;
+    margin-left: 35px;
+}
+
+.social ul li h4{
+    text-align: left;
+    color: #fc138c;
+    font-family: 'Gadugi';
+    font-size: 16px;
+    float: right;
+}
+
+
+/*////////////////////////////////////
+				PÁGINA DE CADASTRO
+////////////////////////////////////*/
+
+
+
+.cadastro{
+    background-image:url('./assets/imgs/bg_cad.jpg');
+    width: 100%;
+    height: auto;
+    padding-bottom: 50px;
+    padding-top: 150px;
+    background-size: cover;
+    background-position: right top;
+
+}
+
+.bg_formulario{
+    background-color: rgba(0,0,0,0.3);
+    padding: 40px;
+}
+
+.bg_formulario h2{
+    color: #ffffff;
+    font-family: 'Androgyne';
+    text-align: center;
+    font-size: 50px;
+    margin: 0 0 50px 0;
+}
+
+.cadastro.form-group{
+    margin-top: 20px;
+}
+
+.cadastro label{
+    color: #ffffff;
+    font-family: 'Gadugi';
+    font-size: 16px;
+    margin-bottom: 0px;
+}
+
+.cadastro input{
+    background-color: #ffffff;
+    border: 0;
+    color: #acacac;
+    border-radius: 0px;
+    font-weight: bold;
+}
+
+/*////////////////////////////////////
+				HEADER PERSONALIZADO
+////////////////////////////////////*/
+
+.header_personalizado{
+    background-color: rgba(0,0,0,0.7);
+    height: 80px;
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+
+.header_personalizado span{
+    margin: 25px;
+    float: left;
+}
+
+.header_personalizado .logo{
+    display: block;
+}
+
+.logo{
+    float: left;
+    font-size: 77px;
+    font-family: 'Androgyne';
+    margin: 0;
+    line-height: 77px;
+    color: #ffffff;
+    padding-top: 15px;
+}
+
+.header_personalizado .menu{
+    text-align: right;
+}
+
+.header_personalizado .menu-nav.mobile-menu li {
+    text-align: center;
+}
+
+
+/*////////////////////////////////////
+		LOGIN
+////////////////////////////////////*/
+
+.form-group a{
+    color: #ffffff;
+    font-size: 12px;
+    float: right;
+}
+
+.btn_login{
+    margin-top: 15px;
+}
+
+/*////////////////////////////////////
+		PÁGINA DA LOJA
+////////////////////////////////////*/
+
+
+.pagina_loja .produto_valor p{
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.pagina_loja .produto_valor{
+    margin-top: 5px;
+    font-size: 22px;
+}
+
+/*////////////////////////////////////
+		PÁGINA DO PRODUTO
+////////////////////////////////////*/
+
+.pagina_produto{
+    margin-top: 100px;
+    background-image:url('./assets/imgs/bg_loja.png');
+    background-repeat: repeat-x;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 50px;
+    background-size: cover;
+    background-position: center;
+
+}
+
+.model_produto{
+    background-color: rgba(0,0,0,0.9);
+    padding: 50px 50px;
+    border: 1px solid #000000;
+}
+
+.model_produto h1{
+    color: #fc138c;
+    font-family: 'Androgyne';
+    font-size: 30px;
+    border-bottom: 1px solid #ffffff;
+    padding-bottom: 15px;
+}
+
+.model_produto p{
+    font-size: 18px;
+    font-family: 'Gadugi';
+    color: #bbbbbb;
+}
+
+.pagina_produto_desc{
+
+}
+
+.pagina_produto_pag{
+    border: 1px solid #ffffff;
+    text-align: right;
+    color: #ffffff;
+    padding: 15px;
+    background-color: #fc138c;
+}
+
+.pagina_produto_pag h2{
+    font-family: "Ebrima";
+    font-weight: bolder;
+    font-size: 50px;
+    margin-bottom: 25px;
+}
+
+.pagina_produto_pag p{
+    font-size: 12px;
+    margin: 0;
+}
+
+.pagina_produto_pag input{
+    margin-top: 25px;
+    color: #000000;
+}
+
+.pagina_produto_pag button{
+    background-color: #ffffff;
+    color: #fc138c;
+    font-family: "Gadugi";
+    font-weight: bolder;
+    border: 2px solid #ffffff;
+}
+
+/*////////////////////////////////////
+				PÁGINA FOTOS
+////////////////////////////////////*/
+
+
+.pagina_fotos{
+    margin-top: 100px;
+}
+
+/*////////////////////////////////////
+				PÁGINA LOJA
+////////////////////////////////////*/
+
+.pagina_loja{
+    margin-top: 100px;
+    background-image:url('./assets/imgs/bg_loja.png');
+    background-repeat: repeat-x;
+    width: 100%;
+    height: auto;
+    padding-bottom: 50PX;
+    background-size: cover;
+    background-position: center;
+}
+
+
